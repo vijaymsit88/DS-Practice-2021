@@ -40,3 +40,4 @@ class HashTable {
   console.log(myHashTable.get('grapes'))
   myHashTable.set('apples', 9)
   console.log(myHashTable.get('apples'))
+  //test
