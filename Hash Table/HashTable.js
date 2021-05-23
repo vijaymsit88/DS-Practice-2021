@@ -34,6 +34,16 @@ class HashTable {
       }
       return undefined;
     }
+
+    keys(){
+      const keysArray = [];
+      for (let i = 0; i < this.data.length; i++){
+        if(this.data[i]){
+          keysArray.push(this.data[i][0][0])
+        }
+      }
+      return keysArray;
+    }
   }
   
   const myHashTable = new HashTable(50);
@@ -41,4 +51,4 @@ class HashTable {
   console.log(myHashTable.get('grapes'))
   myHashTable.set('apples', 9)
   console.log(myHashTable.get('apples'))
-  //test
+  console.log(myHashTable.keys())
