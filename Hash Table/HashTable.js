@@ -6,6 +6,7 @@ class HashTable {
   
     _hash(key) {
       let hash = 0;
+			//The below code ensures that the address value comes under 50
       for (let i =0; i < key.length; i++){
           hash = (hash + key.charCodeAt(i) * i) % this.data.length
       }
