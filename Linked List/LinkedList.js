@@ -36,25 +36,51 @@ class LinkedList {
     insert(index, value) {
         if (index === 0) {
             this.prepend(value);
+            this.length++; 
             return;
         }
 
         //If index is greater than list's current lenght then add item to end.
         if (index >= this.length) {
             this.append(value);
+            this.length++; 
             return;
         }
 
+        const targetNode = this.iterateLinkedList(index);
+        const newNode = new Node(value, targetNode.next);
+        targetNode.next = newNode;
+        this.length++;       
+    }
+
+    remove(index) {
+        if (index === 0) {
+            this.head = this.head.next;
+            this.length--;
+            return;
+        }
+
+        //If index is greater than list's current lenght then add item to end.
+        if (index >= this.length) {
+            const obj = this.iterateLinkedList(this.length-2);
+            obj.next = null;
+            this.tail = obj;
+            this.length--; 
+            return;
+        }
+
+        const leader = this.iterateLinkedList(index);
+        leader.next = leader.next.next;
+        this.length--;       
+    }
+
+    iterateLinkedList(index) {
         let currentIndex = 0;
         let currentNode = this.head;
 
-        //TODO: refactor below code to a separate method.
         while(currentIndex !== index) {
             if (currentIndex === (index-1)) {
-                const newNode = new Node(value, currentNode.next);
-                currentNode.next = newNode;
-                this.length++;
-                return;
+                return currentNode;
             }
             currentIndex++;
             currentNode = currentNode.next;
@@ -69,5 +95,7 @@ myLinkedList.prepend(11);
 myLinkedList.prepend(29);
 myLinkedList.insert(4,77);
 myLinkedList.insert(6,39);
+myLinkedList.remove(9);
+myLinkedList.remove(2);
 myLinkedList.printMyLinkedList();
 //29,11,5,7,3
