@@ -86,6 +86,25 @@ class LinkedList {
             currentNode = currentNode.next;
         }
     }
+
+    reverse() {
+        if(!this.head.next) {
+            return this.head;
+        }
+        let prevPointer = this.head;
+        this.tail = this.head;
+        let nextPointer = this.head.next;
+        this.head = nextPointer;
+        this.tail.next = null;
+        while(nextPointer.next !== null)
+        {
+            nextPointer = nextPointer.next;
+            this.head.next = prevPointer;
+            prevPointer = this.head;
+            this.head = nextPointer;
+        }
+        this.head.next = prevPointer;
+    }
 }
 
 const myLinkedList = new LinkedList(5);
@@ -93,9 +112,11 @@ myLinkedList.append(7);
 myLinkedList.append(3);
 myLinkedList.prepend(11);
 myLinkedList.prepend(29);
-myLinkedList.insert(4,77);
-myLinkedList.insert(6,39);
-myLinkedList.remove(9);
-myLinkedList.remove(2);
+// myLinkedList.insert(4,77);
+// myLinkedList.insert(6,39);
+// myLinkedList.remove(9);
+// myLinkedList.remove(2);
+// myLinkedList.printMyLinkedList();
+myLinkedList.reverse();
 myLinkedList.printMyLinkedList();
 //29,11,5,7,3
