@@ -19,6 +19,7 @@ function moveZerosToTheEnd(array) {
 
 moveZerosToTheEnd(numbers);
 
+
 /* Another way
 function moveZerosToTheEnd(array) {
     let zeroPointer = -1;
