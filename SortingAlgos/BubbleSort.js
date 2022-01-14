@@ -5,14 +5,14 @@ function bubbleSort(array) {
     let maxNode = null;
     //Each outer loop iteration tries to bubble up the largest/max node 
     //to the end of list. 
-    for (i = 0; i < array.length; i++) {
-        for (j = 0; j < array.length; j++) {
+    for(i = 0; i < array.length; i++) {
+        for(j = 1; j < array.length; j++) {
             //Consecutive nodes are compared with each other and max node
             //is shifted towards the right.
-            if (array[j] > array[j + 1]) {
-                maxNode = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = maxNode;
+            if(array[j-1] > array[j]) {
+                maxNode = array[j-1];
+                array[j-1] = array[j];
+                array[j] = maxNode;
             }
         }
     }
