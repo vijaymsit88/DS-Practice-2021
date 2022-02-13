@@ -16,7 +16,7 @@ function leftRotateAnArrayByDSpaces(array, d) {
     for (i = d; i < d+(len-d)/2 ; i++) {  
         reverseArray();    
     }
-    //Reverse the array from n to n-1
+    //Reverse the array from 0 to n-1
     dPointer = len-1;
     for (i = 0; i < len/2 ; i++) {  
         reverseArray();      

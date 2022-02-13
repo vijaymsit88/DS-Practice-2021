@@ -131,7 +131,7 @@ class BinarySearchTree {
         return this.BreadthFirstSearchR(queue, list);
     }
 
-    DFTPreOrder(currentNode, list) {
+    DFTPreOrder() {
         return this.traversePreOrder(this.root, []);
     }
     DFTPostOrder() {

@@ -4,7 +4,7 @@ function removeDupFromSortedArray(array) {
     let dupPointer = 1;
     //As 1st position is never a duplicate so we start from 1.
     //Keep track of the duplicate value with dupPointer and then copy the new found unique value to it as soon as you find it.
-    for (i = 1; i < array.length; i++) {
+    for (let i = 1; i < array.length; i++) {
         if(array[i]!==array[dupPointer-1]){
             array[dupPointer] = array[i];
             dupPointer++;

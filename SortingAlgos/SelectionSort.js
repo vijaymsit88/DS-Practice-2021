@@ -1,5 +1,6 @@
 const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
+//Chota dhund ke aahe rakh do
 function selectionSort(array) {
     let i, j = 0;
     let minNode = null;
