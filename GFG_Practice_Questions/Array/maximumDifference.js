@@ -10,14 +10,10 @@ function maximumDifference(array) {
     let n = array.length;
     let maxDifference = array[1] - array[0];
     let minValue = array[0];
-    let tempDiff;
     //Consider a min value. Whenever you see the difference is more than the previous maximum, then you update the minimum value.
-    for (i = 1; i < n - 1; i++) { 
-            tempDiff = array[i+1] - minValue;
-            if (tempDiff > maxDifference) {
-                maxDifference = tempDiff;
-                minValue = array[i];
-            }
+    for (let i = 1; i < n; i++) { 
+        maxDifference = Math.max(maxDifference, array[i]- minValue);
+        minValue = Math.min(minValue, array[i]);
     }
     console.log('Max Difference is: ' + maxDifference);
 }
