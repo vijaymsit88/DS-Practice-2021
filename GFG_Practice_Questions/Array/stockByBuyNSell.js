@@ -7,7 +7,7 @@ function stockByBuyNSell(a) {
     let n = a.length;
     let profitTrend;
     //Trick is keep adding the profit if there is any between 2 consicutive data points.
-    for (i = 1; i < n; i++) {
+    for (let i = 1; i < n; i++) {
         profitTrend = a[i] - a[i - 1];
         if (profitTrend > 0) {
             maxProfit += profitTrend;
