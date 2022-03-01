@@ -13,7 +13,7 @@ function leftRotateAnArrayByDSpaces(array, d) {
     }
     //Reverse the array from d to n-1
     dPointer = len-1;
-    for (let i = d; i < d+(len-d)/2 ; i++) {  
+    for (let i = d; i < (d+len)/2 ; i++) {  
         reverseArray(i);      
     }
     //Reverse the array from 0 to n-1
