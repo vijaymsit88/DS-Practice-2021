@@ -8,23 +8,23 @@ function leftRotateAnArrayByDSpaces(array, d) {
     let dPointer = d-1;
     let len = array.length;
     //Reverse the array from 0 to d-1
-    for (i = 0; i < d/2 ; i++) {  
-        reverseArray();      
+    for (let i = 0; i < d/2 ; i++) {  
+        reverseArray(i);      
     }
     //Reverse the array from d to n-1
     dPointer = len-1;
-    for (i = d; i < d+(len-d)/2 ; i++) {  
-        reverseArray();    
+    for (let i = d; i < d+(len-d)/2 ; i++) {  
+        reverseArray(i);      
     }
     //Reverse the array from 0 to n-1
     dPointer = len-1;
-    for (i = 0; i < len/2 ; i++) {  
-        reverseArray();      
+    for (let i = 0; i < len/2 ; i++) {  
+        reverseArray(i);        
     }
 
     console.log('Left shifted array by D position is: ' + array);
 
-    function reverseArray() {
+    function reverseArray(i) {
         temp = array[i];
         array[i] = array[dPointer];
         array[dPointer] = temp;
@@ -35,4 +35,4 @@ function leftRotateAnArrayByDSpaces(array, d) {
 //O(n) - Time complexity
 //O(1) - Space complexity.
 
-leftRotateAnArrayByDSpaces(array, 1);
+leftRotateAnArrayByDSpaces(array, 4);
