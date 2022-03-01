@@ -12,13 +12,13 @@ function maxTripletSum(arr)
 
 		// find maximum value(less than arr[i])
 		// from 0 to i-1
-		for (let j = 0; j < i; ++j)
+		for (let j = 0; j < i; j++)
 			if (arr[j] < arr[i])
 				max1 = Math.max(max1, arr[j]);
 
 		// find maximum value(greater than arr[i])
 		// from i+1 to n-1
-		for (let j = i + 1; j < n; ++j)
+		for (let j = i + 1; j < n; j++)
 			if (arr[j] > arr[i])
 				max2 = Math.max(max2, arr[j]);
 
