@@ -32,7 +32,7 @@ function sw_VariableSizeFindMinWindowSubstring(array, pattern) {
         j++;
         if(count > 0) continue;
 
-        //Window hitting condition and taking max window size.
+        //Window hitting condition and taking min window size.
         if (count === 0) {
             while (count === 0) {
                 if (agramMap[array[i]] !== undefined) {

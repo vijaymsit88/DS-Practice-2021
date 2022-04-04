@@ -31,7 +31,7 @@ function sw_VariableSizeFindLongestSubstringWithKChar(array, k) {
                 i++;
             }
             if(count === k) {
-                maxLen = Math.max(maxLen, j - 1 + 1);
+                maxLen = Math.max(maxLen, j - i + 1);
             }
         }
         j++;
