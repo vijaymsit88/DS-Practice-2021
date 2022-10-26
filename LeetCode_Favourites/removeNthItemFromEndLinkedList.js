@@ -58,6 +58,6 @@ var removeNthFromEnd = function(head, n) {
         fastPointer = fastPointer.next;
     }
 
-    slowPointer.next = slowPointer.next.next;
-    return head;
+    slowPointer.next = slowPointer.next.next; //to remove the nth node.
+    return head; //return the list by removing the required node.
 };

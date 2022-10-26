@@ -1,22 +1,33 @@
-function maximumNetworks(speed, minComps, speedThreshold) {
-    // Write your code here
-    let n = speed.length;
-    let count = 0;
-    for (let i = 0; i < n - 1; i++) {
-        let sumCount = 0;
-        let sum = speed[i];
-        for (let j = i + 1; j < n; j++) {
-            sum += speed[j];
-            sumCount++;
-            if(sum >= speedThreshold){
-                if(sumCount >= minComps) {
-                    count++;
-                }
-            }
-        }
-    }
-    console.log(count);
-}
+let arr = [1,2,3,3]
 
-let speeds = [5,1,9,12,10,13]
-maximumNetworks(speeds, 2, 15)
+    function balancedSum(arr) {
+        // Write your code here
+        //arr.sort((x,y)=>x-y);
+        //console.log(...arr);
+        let n = arr.length;
+        let l = 1;
+        let r = n-1;
+        let lSum = arr[0];
+        let rSum = arr[n-1];
+        let k = n;
+        
+        while(l < r) {
+        console.log(lSum + ' ' + rSum);  
+        k = r-l;   
+        if(k === 1 && lSum === rSum) {
+            return r-l;
+        }    
+    
+        if(lSum <= rSum) {
+            lSum += arr[l];
+            l++;
+        } else {
+            rSum += arr[r];
+            r--; 
+        }
+        
+        }
+        
+    }
+
+console.log(balancedSum(arr)); 

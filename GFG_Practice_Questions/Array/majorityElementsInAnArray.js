@@ -4,8 +4,6 @@ let array = [3, 3, 2, 1, 3, 2, 2]
 //let array = [10,20,30]
 //let array = [30,20,10]
 
-//Problem - Given an array, try to find the maximum difference between any 2 items for that array.
-
 function findIndexOfMajorityElement(array) {
     let freqDict = {}
     let n = array.length;
